@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+
+check()
+{
+  echo -n -e "\033[1;40m\033[1;36m\n\nStarting the units test\n\033[30m"
+  for i in `find specs/unit -maxdepth 1000 -type f -name "*_specs.c"`
+  do
+    gcc ${i} -o yubel -l unit && ./yubel && rm ./yubel
+    if [ $? == 0 ]
+    then
+      sleep 1
+      continue
+    else
+      echo -e "\033[1;37m[ \033[1;31mERROR\033[37m ] ${i}\033[30m"
+      exit 1
+    fi
+  done
+  echo -n -e "\033[1;40m\033[1;36m\n\nStarting the installation tests\033[30m\n"
+  echo -e "\033[1;32m"
+  for i in `find specs/install -maxdepth 1000 -type f -name "*_specs.c"`
+  do
+    gcc ${i} -o yubel -l installer&& ./yubel && rm ./yubel
+    if [ $? == 0 ]
+    then
+      sleep 1
+      continue
+    else
+      echo -e "\033[1;37m[ \033[1;31mERROR\033[37m ] ${i}\033[30m"
+      exit 1
+    fi
+  done
+}
+
+while [ true ]
+do
+  sleep 1
+  check
+  sleep 1
+done
+
