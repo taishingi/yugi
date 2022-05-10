@@ -12,6 +12,9 @@ git clone https://github.com/shingitai/yugi
 cd yugi && cmake . && sudo make install
 ```
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/shingitai/yugi/install.sh | bash
+```
 
 # Tests
 
