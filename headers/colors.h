@@ -36,12 +36,12 @@
 #define BACKGROUND_CRIMSON "\033[1;48m"
 
 
-#define msg(message, background, foreground, icon) fprintf(stdout, "%s%s%s\n\n%s %s\n%s\n", FORMAT_BRIGHT, background, foreground, icon, message, FORMAT_RESET);
-#define success(message) msg(message, BACKGROUND_BLACK, FOREGROUND_GREEN, "🗸");
-#define title(message) msg(message, BACKGROUND_BLACK, FOREGROUND_MAGENTA FORMAT_ITALIC,"%");
-#define danger(message) msg(message, BACKGROUND_BLACK, FOREGROUND_RED, "!");
-#define die(message) msg(message, BACKGROUND_BLACK, FOREGROUND_RED FORMAT_BLINK, "!!"); exit(1);
-#define alert(message) danger(message);                            
+#define msg(message, background, foreground, icon) fprintf(stdout, "%s%s%s\n\n%s%s\n%s\n", FORMAT_BRIGHT, background, foreground, icon, message, FORMAT_RESET);
+#define success(message) msg(message, BACKGROUND_BLACK, FOREGROUND_GREEN, "* ");
+#define title(message) msg(message, BACKGROUND_BLACK, FOREGROUND_MAGENTA FORMAT_ITALIC,"% ");
+#define danger(message) msg(message, BACKGROUND_BLACK, FOREGROUND_RED, "! ");
+#define die(message) msg(message, BACKGROUND_BLACK, FOREGROUND_RED FORMAT_BLINK, "!! "); exit(1);
+#define alert(message) danger(message);
 #define warning(message) msg(message, BACKGROUND_BLACK, FOREGROUND_YELLOW, "✴");
 #define info(message) msg(message, BACKGROUND_BLACK, FOREGROUND_CYAN, "✵");
 #define primary(message) msg(message, BACKGROUND_BLACK, FOREGROUND_MAGENTA, "🟍");

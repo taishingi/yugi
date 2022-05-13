@@ -5,7 +5,7 @@ check()
   echo -n -e "\033[1;40m\033[1;36m\n\nStarting the units test\n\033[30m"
   for i in `find specs/unit -maxdepth 1000 -type f -name "*_specs.c"`
   do
-    gcc ${i} -o yubel -l unit && ./yubel && rm ./yubel
+    gcc ${i} -o yubel -l unit  && ./yubel && rm ./yubel
     if [ $? == 0 ]
     then
       sleep 1

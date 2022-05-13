@@ -6,7 +6,8 @@ void clean(void)
 }
 int main(void)
 {
-  return installer()
+  return
+    Install()
     ->clone("/var/home/juwishmaster/.github/yugi","/tmp/yugi","")
     ->cd("/tmp/yugi")
     ->execute("cmake . && make")

@@ -17,9 +17,9 @@ extern int status;
 typedef struct install install;
 struct install
 {
-  
+
   bool (*suppress)(const char *directory);
-  
+
   /**
    *
    * Change the repository branch
@@ -103,6 +103,7 @@ struct install
 };
 
 install *cd(const char *directory);
+
 /**
  *
  * End of the command
@@ -121,7 +122,7 @@ int done(void(*clean)(void));
  * @return *install
  *
  **/
-install *installer(void);
+install *Install(void);
 
 /**
  *

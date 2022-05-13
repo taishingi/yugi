@@ -95,12 +95,5 @@ int main(void)
 # Test usage
 
 ```bash
-oh *oh.c
-
-oh # Execute te last command stored in oh_history file
-
-oh -w # Enable the wath mode
-
-oh -w -t $time # Enable the wat mode and change the sleep time
-
+oh 
 ```

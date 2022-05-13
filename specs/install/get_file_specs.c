@@ -7,8 +7,8 @@ void clean(void)
 
 int main(void)
 {
-  return 
-    installer()
+  return
+    Install()
     ->cd("/tmp")
     ->execute("wget https://github.com/torvalds/linux/blob/master/README")
     ->exist("README")
