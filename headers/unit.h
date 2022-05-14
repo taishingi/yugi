@@ -77,13 +77,21 @@ struct unit
   unit *(*beetween)(double min,double max);
 
   unit *(*inferior)(double max);
+  
   unit *(*equal)(double expected);
+  
+  unit *(*theory)(const char *description, int expected,int (*check)(void));
 
   unit *(*superior)(double min);
 
+  unit *(*scenario)(const char *description,unit *(*f)(unit *u));
   int (*status)(void);
 
 };
+
+unit *theory(const char *description,int expected, int (*check)(void));
+
+unit *scenario(const char *description,unit *(*f)(unit *u));
 
 int status(void);
 

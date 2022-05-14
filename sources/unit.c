@@ -16,9 +16,30 @@ unit *Unit(void)
   u.superior = &superior;
   u.inferior = &inferior;
   u.status = &status;
+  u.theory = &theory;
+  u.scenario  =&scenario;
   return &u;
 }
 
+unit *scenario(const char *description,unit *(*f)(unit *u))
+{
+  title(description);
+  return f(&u);
+}
+unit *theory(const char *description,int expected, int (*check)(void))
+{
+  title(description);
+  if(expected == check())
+  {
+    success(THEORY_IS_TRUE);
+    u.assertions++;
+  }else
+  {
+    danger(THEORY_IS_FALSE);
+    u.failures++;
+  }
+  return &u;
+}
 unit *ok(bool actual)
 {
   if(actual)
