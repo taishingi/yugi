@@ -8,7 +8,7 @@ void clean(void)
 int main(void)
 {
   return
-    Install()
+    Install("Download linux readme file")
     ->cd("/tmp")
     ->execute("wget https://github.com/torvalds/linux/blob/master/README")
     ->exist("README")

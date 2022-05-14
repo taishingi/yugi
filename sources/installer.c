@@ -41,8 +41,10 @@ bool suppress(const char *directory)
   die("No such file or directory");
 }
 
-install *Install(void)
+install *Install(const char *description)
 {
+  title(description);
+  sleep(1);
   i.clone     = &clone;
   i.checkout  = &checkout;
   i.execute   = &execute;

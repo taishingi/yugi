@@ -7,8 +7,8 @@ void clean(void)
 int main(void)
 {
   return
-    Install()
-    ->clone("/var/home/juwishmaster/.github/yugi","/tmp/yugi","")
+    Install("Check if yugi can be installed")
+    ->clone("https://github.com/shingitai/yugi.git","/tmp/yugi","")
     ->cd("/tmp/yugi")
     ->execute("cmake . && make")
     ->rm("/tmp/yugi")

@@ -122,7 +122,7 @@ int done(void(*clean)(void));
  * @return *install
  *
  **/
-install *Install(void);
+install *Install(const char *description);
 
 /**
  *
